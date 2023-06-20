@@ -34,3 +34,12 @@ Deployments manage the desired state of your application: how many Pods should r
 
 Stateless applications are in contrast to stateful applications, which use persistent storage to save data and which use StatefulSets to deploy Pods with unique identities.
 
+# Stateful Deployment 
+
+Stateful Deployment:
+
+A stateful deployment typically involves deploying applications that require persistent storage or maintain stateful data.
+In this example, we'll create a stateful deployment for a WordPress application that uses a MySQL database.
+
+
+
