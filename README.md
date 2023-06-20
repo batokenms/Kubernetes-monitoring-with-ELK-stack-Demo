@@ -1,5 +1,14 @@
 # Notes 
 
+# The deployment order doesn't matter; however, I think you should follow this order. 
+
+1. elasticsearch-ss.yaml
+2. logstash-deployment.yaml
+3. filebeat-ds.yaml            ==>  ds stands for deamon set
+4. metricbeat-ds.yaml          ==>  ds stands for deamon set
+5. kibana-deployment.yaml
+6. curator-cronjob.yaml
+
 # Images from the above project 
 
 #Workloads 
