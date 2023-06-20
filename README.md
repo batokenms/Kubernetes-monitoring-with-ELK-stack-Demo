@@ -1,13 +1,41 @@
 # Notes 
 
-# The deployment order doesn't matter; however, I think you should follow this order. 
+# The deployment order doesn't matter; however, you should follow this order. 
 
 1. elasticsearch-ss.yaml
 2. logstash-deployment.yaml
-3. filebeat-ds.yaml            ==>  ds stands for deamon set
-4. metricbeat-ds.yaml          ==>  ds stands for deamon set
+3. filebeat-ds.yaml            ==>  ds stands for daemon set
+4. metricbeat-ds.yaml          ==>  ds stands for daemon set
 5. kibana-deployment.yaml
 6. curator-cronjob.yaml
+
+# What is a DaemonSet in Kubernetes? 
+
+A DaemonSet in Kubernetes is a type of controller that ensures that a copy of a specific pod is running on each node in the cluster. 
+
+It is used for running system daemons or background processes that must be present on every node.
+
+Here are a few critical points about DaemonSets and their importance:
+
+Placement on every node: DaemonSets ensure that a copy of the specified pod runs on each node in the cluster. 
+
+This makes them helpful in deploying specific infrastructure-related tasks or agents that must be present on every node, such as log collectors, monitoring agents, or networking components.
+
+Scaling with the cluster: As you add or remove nodes from the cluster, DaemonSets automatically adjust to maintain the desired number of pods. 
+
+When a new node joins the cluster, a pod is automatically created on that node. If a node is removed, the corresponding pod is also removed.
+
+Updating or rolling out changes: DaemonSets provide a way to easily update or roll out changes to the pods running on each node. 
+
+When you update the DaemonSet's configuration, such as the container image or resource requirements, Kubernetes automatically handles rolling updates, ensuring that the new configuration is applied to each pod while maintaining the desired number of replicas.
+
+Node-specific configurations: DaemonSets can apply node-specific configurations or deploy node-specific services. 
+
+Using node labels or node selectors, you can customize the pods running on specific nodes, enabling you to deploy different configurations or services based on the node's characteristics.
+
+Monitoring and logging: DaemonSets are crucial in ensuring proper monitoring and logging across the cluster. By running monitoring agents or log collectors as DaemonSets, you can collect metrics and logs from every node, providing comprehensive visibility into the cluster's health and performance.
+
+DaemonSets are essential for deploying and managing system-level processes or agents across all nodes in a Kubernetes cluster. They simplify the deployment and management of infrastructure-related components, provide consistency across the cluster, and enable efficient monitoring and logging practices.
 
 # Images from the above project 
 
