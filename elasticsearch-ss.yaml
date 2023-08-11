@@ -122,7 +122,7 @@ metadata:
     addonmanager.kubernetes.io/mode: Reconcile
     kubernetes.io/name: "Elasticsearch"
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
   - port: 9200
     protocol: TCP
